@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generated": "2026-05-17T20:55:00Z",
+  "generated": "2026-05-17T22:30:00Z",
   "plugins": [
     {
       "id": "com.openhpsdr.zeus.plugins.antennagenius",
@@ -79,6 +79,106 @@
           "platforms": ["any"],
           "downloadUrl": "https://github.com/Kb2uka/openhpsdr-zeus-plugins/releases/download/rf2k-v1.0.0/rf2k-1.0.0.zip",
           "sha256": "9d6f08c800806bbf1b3b3dfae8007d463326193b02696c62144cbf98313fe72f"
+        }
+      ]
+    },
+    {
+      "id": "com.openhpsdr.zeus.samples.eq",
+      "name": "EQ (10-band parametric)",
+      "description": "First block of the Zeus voice audio chain v1 (issue #332). Ten-band parametric EQ with per-band frequency, gain, and Q controls plus a draggable transfer-function curve. RBJ Audio EQ Cookbook peaking biquads. Operator presets persist across restart. Realtime managed C#, no native dependency.",
+      "author": "KB2UKA",
+      "license": "GPL-2.0-or-later",
+      "homepage": "https://github.com/Kb2uka/openhpsdr-zeus",
+      "categories": ["audio"],
+      "verified": true,
+      "versions": [
+        {
+          "version": "0.1.0",
+          "sdkAbi": 1,
+          "sdkMinVersion": "1.0.0",
+          "platforms": ["any"],
+          "downloadUrl": "https://github.com/Kb2uka/openhpsdr-zeus-plugins/releases/download/eq-v0.1.0/eq-0.1.0.zip",
+          "sha256": "55461000343eaa283b963e81cf272f28345eca69766d9f1b90035f90346253fb"
+        }
+      ]
+    },
+    {
+      "id": "com.openhpsdr.zeus.samples.compressor",
+      "name": "Compressor",
+      "description": "Second block of the Zeus voice audio chain v1 (issue #332). VCA-style compressor with threshold, ratio, attack, release, knee, and makeup gain. Brass-plate UI with a live transfer-function curve and vertical IN/OUT/GR meters. Per-block bypass for instant A/B. Realtime managed C#, no native dependency.",
+      "author": "KB2UKA",
+      "license": "GPL-2.0-or-later",
+      "homepage": "https://github.com/Kb2uka/openhpsdr-zeus",
+      "categories": ["audio"],
+      "verified": true,
+      "versions": [
+        {
+          "version": "0.1.2",
+          "sdkAbi": 1,
+          "sdkMinVersion": "1.0.0",
+          "platforms": ["any"],
+          "downloadUrl": "https://github.com/Kb2uka/openhpsdr-zeus-plugins/releases/download/compressor-v0.1.2/compressor-0.1.2.zip",
+          "sha256": "7c781605e68c0ca07b2b6b7904ae0058562fb8d55bec6b5097eb32f5aae32118"
+        }
+      ]
+    },
+    {
+      "id": "com.openhpsdr.zeus.samples.exciter",
+      "name": "Aural Exciter",
+      "description": "Third block of the Zeus voice audio chain v1 (issue #332). Aphex-style aural exciter — a high-pass tap, drive into a tanh saturator to synthesise even harmonics, then mix back over the dry. Operator controls: cutoff frequency, drive, mix. Adds presence and intelligibility for SSB voice without rebalancing the original signal. Realtime managed C#, no native dependency.",
+      "author": "KB2UKA",
+      "license": "GPL-2.0-or-later",
+      "homepage": "https://github.com/Kb2uka/openhpsdr-zeus",
+      "categories": ["audio"],
+      "verified": true,
+      "versions": [
+        {
+          "version": "0.1.0",
+          "sdkAbi": 1,
+          "sdkMinVersion": "1.0.0",
+          "platforms": ["any"],
+          "downloadUrl": "https://github.com/Kb2uka/openhpsdr-zeus-plugins/releases/download/exciter-v0.1.0/exciter-0.1.0.zip",
+          "sha256": "75fece3991c6a89d761d69c7a4913f0ff998fab27dd899111686a0aae5c97f42"
+        }
+      ]
+    },
+    {
+      "id": "com.openhpsdr.zeus.samples.bass",
+      "name": "Bass Enhancer",
+      "description": "Fourth block of the Zeus voice audio chain v1 (issue #332). MaxxBass / Aphex 204 'Big Bottom' Family-B missing-fundamental approach: low-pass isolates the bass band, full-wave rectification generates octave-up harmonics, a high-pass strips DC + the redundant fundamental, mix back over dry. The ear reconstructs the perceived bass without the radio transmitting frequencies the antenna can't efficiently radiate. Realtime managed C#, no native dependency.",
+      "author": "KB2UKA",
+      "license": "GPL-2.0-or-later",
+      "homepage": "https://github.com/Kb2uka/openhpsdr-zeus",
+      "categories": ["audio"],
+      "verified": true,
+      "versions": [
+        {
+          "version": "0.1.0",
+          "sdkAbi": 1,
+          "sdkMinVersion": "1.0.0",
+          "platforms": ["any"],
+          "downloadUrl": "https://github.com/Kb2uka/openhpsdr-zeus-plugins/releases/download/bass-v0.1.0/bass-0.1.0.zip",
+          "sha256": "37620e71e08ce5a67a3163aebe3640431084443e0e2dcdbc8fa84b23857e38a7"
+        }
+      ]
+    },
+    {
+      "id": "com.openhpsdr.zeus.samples.reverb",
+      "name": "Reverb",
+      "description": "Fifth and final block of the Zeus voice audio chain v1 (issue #332). Classic four-comb / two-allpass Schroeder reverb with per-comb low-pass damping and operator-tunable size, decay, damp, pre-delay, and mix. Tuned for ham-radio TX sweetening — conservative defaults keep the tail behind the voice. Realtime managed C#, no native dependency.",
+      "author": "KB2UKA",
+      "license": "GPL-2.0-or-later",
+      "homepage": "https://github.com/Kb2uka/openhpsdr-zeus",
+      "categories": ["audio"],
+      "verified": true,
+      "versions": [
+        {
+          "version": "0.1.0",
+          "sdkAbi": 1,
+          "sdkMinVersion": "1.0.0",
+          "platforms": ["any"],
+          "downloadUrl": "https://github.com/Kb2uka/openhpsdr-zeus-plugins/releases/download/reverb-v0.1.0/reverb-0.1.0.zip",
+          "sha256": "0c998ec3611de412dccc5c3bc12869faec9ea65516d42a0d8bc7eeff3ad393ce"
         }
       ]
     }
