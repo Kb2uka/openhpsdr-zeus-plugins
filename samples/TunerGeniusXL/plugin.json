@@ -12,7 +12,7 @@
     "assembly": "TunerGeniusXL.dll",
     "type": "Openhpsdr.Zeus.Plugins.TunerGeniusXL.TgxlPlugin"
   },
-  "capabilities": ["PersistSettings"],
+  "capabilities": ["NetworkAccess", "PersistSettings"],
   "permissions": {
     "network": true
   },
@@ -23,7 +23,8 @@
         "id": "tgxl.main",
         "title": "Tuner Genius XL",
         "icon": "Radio",
-        "slot": "workspace.tuner"
+        "slot": "workspace.tuner",
+        "category": "tuners"
       }
     ]
   }
