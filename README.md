@@ -1,21 +1,20 @@
 # Openhpsdr-Zeus plugin registry
 
 This repository hosts the canonical plugin registry consumed by every
-[Openhpsdr-Zeus](https://github.com/brianbruff/openhpsdr-zeus) instance.
+[Openhpsdr-Zeus](https://github.com/Kb2uka/openhpsdr-zeus) instance.
 The Zeus client fetches `registry.json` over HTTPS on demand and lists
 its entries in **Settings → Plugins → Browse**.
 
 ## Curator
 
-Brian Keating (EI6LF). Will transfer to KB2UKA's GitHub account at a
-later date.
+Brian Keating (EI6LF). The repo lives at Kb2uka/openhpsdr-zeus-plugins on GitHub.
 
 ## How operators use the registry
 
 Each Zeus client points at:
 
 ```
-https://raw.githubusercontent.com/brianbruff/openhpsdr-zeus-plugins/main/registry.json
+https://raw.githubusercontent.com/Kb2uka/openhpsdr-zeus-plugins/main/registry.json
 ```
 
 The catalog is fetched on Settings → Plugins → Browse and cached for
@@ -30,7 +29,7 @@ directly. The registry is optional, not the only path.
 
 ## How plugin authors get listed
 
-1. Build a Zeus plugin per the [author guide](https://github.com/brianbruff/openhpsdr-zeus/blob/main/docs/plugins/author-guide.md).
+1. Build a Zeus plugin per the [author guide](https://github.com/Kb2uka/openhpsdr-zeus/blob/main/docs/plugins/author-guide.md).
    Your `plugin.json` must validate against `schema/manifest.schema.json`.
 
 2. Publish a zip artifact to a stable HTTPS URL — typically a GitHub
@@ -55,7 +54,7 @@ directly. The registry is optional, not the only path.
 ## Versioning
 
 Bump SemVer per the
-[plugin author guide](https://github.com/brianbruff/openhpsdr-zeus/blob/main/docs/plugins/author-guide.md#8-versioning-rules):
+[plugin author guide](https://github.com/Kb2uka/openhpsdr-zeus/blob/main/docs/plugins/author-guide.md#8-versioning-rules):
 
 - **patch** — bug fix, operators auto-update
 - **minor** — additive feature, operators see "Update available"
