@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generated": "2026-05-18T19:32:49Z",
+  "generated": "2026-05-18T23:50:59Z",
   "plugins": [
     {
       "id": "com.openhpsdr.zeus.plugins.antennagenius",
@@ -187,6 +187,26 @@
           "platforms": ["any"],
           "downloadUrl": "https://github.com/Kb2uka/openhpsdr-zeus-plugins/releases/download/reverb-v0.1.0/reverb-0.1.0.zip",
           "sha256": "0c998ec3611de412dccc5c3bc12869faec9ea65516d42a0d8bc7eeff3ad393ce"
+        }
+      ]
+    },
+    {
+      "id": "com.openhpsdr.zeus.samples.noisegate",
+      "name": "Noise Gate",
+      "description": "Voice noise gate for the Zeus audio chain. Peak-envelope detector with built-in 3 dB open/close hysteresis to prevent chatter, configurable hold time so the gate doesn't clamp shut between syllables, separate attack and release gain-slew time constants, adjustable range (depth of attenuation when closed), and an output gain trim for level-matching downstream blocks. Vertical IN/OUT peak meters and a live threshold rail with OPEN / HOLD / CLOSED state pill. Realtime managed C#, no native dependency.",
+      "author": "KB2UKA",
+      "license": "GPL-2.0-or-later",
+      "homepage": "https://github.com/Kb2uka/openhpsdr-zeus",
+      "categories": ["audio"],
+      "verified": true,
+      "versions": [
+        {
+          "version": "0.1.0",
+          "sdkAbi": 1,
+          "sdkMinVersion": "1.0.0",
+          "platforms": ["any"],
+          "downloadUrl": "https://github.com/Kb2uka/openhpsdr-zeus-plugins/releases/download/noisegate-v0.1.0/noisegate-0.1.0.zip",
+          "sha256": "c4f71aa3fa8851f3707444565332c24f334e821407df86d2d8d19021533f633d"
         }
       ]
     }
