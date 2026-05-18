@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generated": "2026-05-18T19:32:49Z",
+  "generated": "2026-05-18T20:12:22Z",
   "plugins": [
     {
       "id": "com.openhpsdr.zeus.plugins.antennagenius",
@@ -187,6 +187,26 @@
           "platforms": ["any"],
           "downloadUrl": "https://github.com/Kb2uka/openhpsdr-zeus-plugins/releases/download/reverb-v0.1.0/reverb-0.1.0.zip",
           "sha256": "0c998ec3611de412dccc5c3bc12869faec9ea65516d42a0d8bc7eeff3ad393ce"
+        }
+      ]
+    },
+    {
+      "id": "com.openhpsdr.zeus.samples.tubepreamp",
+      "name": "Tube Preamp",
+      "description": "Triode-style soft-saturator for the Zeus voice audio chain. Asymmetric tanh transfer (operating-point shift removes DC; bias > 0 emphasises 2nd-harmonic warmth) feeds a 1-pole DC blocker, a sweepable Warmth low-pass, and an output trim. Live SVG transfer-curve viz makes the asymmetry directly legible. Realtime managed C#, no native dependency.",
+      "author": "KB2UKA",
+      "license": "GPL-2.0-or-later",
+      "homepage": "https://github.com/Kb2uka/openhpsdr-zeus",
+      "categories": ["audio"],
+      "verified": true,
+      "versions": [
+        {
+          "version": "0.1.0",
+          "sdkAbi": 1,
+          "sdkMinVersion": "1.0.0",
+          "platforms": ["any"],
+          "downloadUrl": "https://github.com/Kb2uka/openhpsdr-zeus-plugins/releases/download/tubepreamp-v0.1.0/tubepreamp-0.1.0.zip",
+          "sha256": "64781bafb66fcdbedd64bb811e06ee4eb9594043d72db844b36b4b7ca45cadb0"
         }
       ]
     }
