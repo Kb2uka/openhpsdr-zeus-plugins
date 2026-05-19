@@ -76,6 +76,8 @@ public sealed class BassPlugin : IZeusPlugin, IAudioPlugin, IBackendPlugin
         if (incoming.FrequencyHz.HasValue) _dsp.FrequencyHz = ClampF(incoming.FrequencyHz.Value, 40f, 500f);
         if (incoming.AmountPct.HasValue)   _dsp.AmountPct   = ClampF(incoming.AmountPct.Value,    0f, 100f);
         if (incoming.MixPct.HasValue)      _dsp.MixPct      = ClampF(incoming.MixPct.Value,       0f, 100f);
+        if (incoming.InputDb.HasValue)     _dsp.InputDb     = ClampF(incoming.InputDb.Value,    -24f,  12f);
+        if (incoming.OutputDb.HasValue)    _dsp.OutputDb    = ClampF(incoming.OutputDb.Value,   -24f,  12f);
         if (incoming.Bypass.HasValue)      _dsp.Bypass      = incoming.Bypass.Value;
         if (incoming.FrequencyHz.HasValue) _dsp.MarkParamsDirty();
 
@@ -92,15 +94,19 @@ public sealed class BassPlugin : IZeusPlugin, IAudioPlugin, IBackendPlugin
 
     private async Task HydrateFromSettingsAsync(IPluginSettings settings, CancellationToken ct)
     {
-        var freq   = await settings.GetAsync<float?>("frequency_hz", ct);
-        var amount = await settings.GetAsync<float?>("amount_pct",   ct);
-        var mix    = await settings.GetAsync<float?>("mix_pct",      ct);
-        var bypass = await settings.GetAsync<bool?>("bypass",         ct);
+        var freq    = await settings.GetAsync<float?>("frequency_hz", ct);
+        var amount  = await settings.GetAsync<float?>("amount_pct",   ct);
+        var mix     = await settings.GetAsync<float?>("mix_pct",      ct);
+        var inputDb = await settings.GetAsync<float?>("input_db",     ct);
+        var outputDb= await settings.GetAsync<float?>("output_db",    ct);
+        var bypass  = await settings.GetAsync<bool?>("bypass",         ct);
 
-        if (freq.HasValue)   _dsp.FrequencyHz = freq.Value;
-        if (amount.HasValue) _dsp.AmountPct   = amount.Value;
-        if (mix.HasValue)    _dsp.MixPct      = mix.Value;
-        if (bypass.HasValue) _dsp.Bypass      = bypass.Value;
+        if (freq.HasValue)    _dsp.FrequencyHz = freq.Value;
+        if (amount.HasValue)  _dsp.AmountPct   = amount.Value;
+        if (mix.HasValue)     _dsp.MixPct      = mix.Value;
+        if (inputDb.HasValue) _dsp.InputDb     = inputDb.Value;
+        if (outputDb.HasValue)_dsp.OutputDb    = outputDb.Value;
+        if (bypass.HasValue)  _dsp.Bypass      = bypass.Value;
 
         _dsp.MarkParamsDirty();
     }
@@ -112,6 +118,8 @@ public sealed class BassPlugin : IZeusPlugin, IAudioPlugin, IBackendPlugin
         await s.SetAsync("frequency_hz", _dsp.FrequencyHz, ct);
         await s.SetAsync("amount_pct",   _dsp.AmountPct,   ct);
         await s.SetAsync("mix_pct",      _dsp.MixPct,      ct);
+        await s.SetAsync("input_db",     _dsp.InputDb,     ct);
+        await s.SetAsync("output_db",    _dsp.OutputDb,    ct);
         await s.SetAsync("bypass",       _dsp.Bypass,      ct);
     }
 
@@ -120,6 +128,8 @@ public sealed class BassPlugin : IZeusPlugin, IAudioPlugin, IBackendPlugin
         FrequencyHz = _dsp.FrequencyHz,
         AmountPct   = _dsp.AmountPct,
         MixPct      = _dsp.MixPct,
+        InputDb     = _dsp.InputDb,
+        OutputDb    = _dsp.OutputDb,
         Bypass      = _dsp.Bypass,
     };
 
@@ -130,6 +140,8 @@ public sealed class BassPlugin : IZeusPlugin, IAudioPlugin, IBackendPlugin
         [JsonPropertyName("freqHz")]    public float? FrequencyHz { get; init; }
         [JsonPropertyName("amountPct")] public float? AmountPct   { get; init; }
         [JsonPropertyName("mixPct")]    public float? MixPct      { get; init; }
+        [JsonPropertyName("inputDb")]   public float? InputDb     { get; init; }
+        [JsonPropertyName("outputDb")]  public float? OutputDb    { get; init; }
         [JsonPropertyName("bypass")]    public bool?  Bypass      { get; init; }
     }
 
