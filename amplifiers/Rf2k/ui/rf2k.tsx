@@ -68,9 +68,11 @@ type Rf2kPower = {
 type Rf2kTuner = {
   mode: string | null;
   setup: string | null;
-  l: number | null;
-  c: number | null;
-  tunedFrequency: number | null;
+  // {value, unit} objects on the wire (matches Rf2kReading), not bare numbers — see #552.
+  l: Rf2kReading | null;
+  c: Rf2kReading | null;
+  tunedFrequency: Rf2kReading | null;
+  segmentSize: Rf2kReading | null;
 };
 
 type Rf2kAntenna = {
