@@ -76,7 +76,12 @@ public sealed record Rf2kPower(
     Rf2kPeakReading? Reflected,
     Rf2kPeakReading? Swr);
 
-public sealed record Rf2kTuner(string? Mode, string? Setup, double? L, double? C, double? TunedFrequency);
+// L / C / TunedFrequency / SegmentSize arrive from the amp's /tuner endpoint as
+// {value, unit} objects — the same wrapper every other measurement uses — NOT
+// bare numbers. They were typed double? here, so System.Text.Json threw
+// "could not be converted to Rf2kTuner. Path: $.L" on every /tuner poll and on
+// the Test REST button (#552). Use Rf2kReading and add the missing segment_size.
+public sealed record Rf2kTuner(string? Mode, string? Setup, Rf2kReading? L, Rf2kReading? C, Rf2kReading? TunedFrequency, Rf2kReading? SegmentSize);
 
 public sealed record Rf2kOperateMode(string OperateMode);
 
