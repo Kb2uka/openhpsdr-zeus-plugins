@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "com.openhpsdr.zeus.plugins.rf2k",
   "name": "RF-Kit RF2K-S Amplifier",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Brian Keating (EI6LF)",
   "description": "Operator console for the RF-Kit RF2K-S amplifier: forward/reflected power, SWR, tuner status, antenna selection, operate/standby, fault reset, and VNC-injected Tune/Bypass. Replaces the in-tree Rf2kService.",
   "homepage": "https://github.com/Kb2uka/openhpsdr-zeus",

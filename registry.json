@@ -73,6 +73,14 @@
       "verified": true,
       "versions": [
         {
+          "version": "1.0.1",
+          "sdkAbi": 1,
+          "sdkMinVersion": "1.0.0",
+          "platforms": ["any"],
+          "downloadUrl": "https://github.com/Kb2uka/openhpsdr-zeus-plugins/releases/download/rf2k-v1.0.1/rf2k-1.0.1.zip",
+          "sha256": "7b4998ae4510b6869851ff85dc357fbc64c6bb4a22ccaa72a27dfe8820f467b1"
+        },
+        {
           "version": "1.0.0",
           "sdkAbi": 1,
           "sdkMinVersion": "1.0.0",
